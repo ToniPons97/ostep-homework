@@ -21,7 +21,7 @@ typedef struct {
 
 static inline void pin_to_cpu_core(int cpu_core);
 static inline void count_cpu_migration(stats_t* s);
-void update_stats(stats_t *s, double value);
+static inline void update_stats(stats_t *s, double value);
 double get_mean(stats_t *s);
 double get_variance(stats_t *s);
 double get_stddev(stats_t *s);
@@ -134,7 +134,7 @@ static inline void count_cpu_migration(stats_t* s)
     // printf("\n[cpu core: %d]\n", curr_cpu);
 }
 
-void update_stats(stats_t *s, double x)
+static inline void update_stats(stats_t *s, double x)
 {
     s->count++;
 
